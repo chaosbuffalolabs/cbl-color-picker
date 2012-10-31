@@ -290,9 +290,9 @@ Factory.register('ColorWheel', ColorWheel)
 
 class ColorPickerDemoApp(App):
     def build(self):
-        set_size = min(Window.size)*.7
-        set_pos = [(Window.size[0]-set_size)/2,(Window.size[1]-set_size)/2]
-        cp = ColorPicker(pos = set_pos, size=(set_size,set_size), size_hint=(None,None))
+        cp_width = min(Window.size)*.7
+        cp_pos = [(Window.size[0]-cp_width)/2,(Window.size[1]-cp_width)/2]
+        cp = ColorPicker(pos = cp_pos, size=(cp_width,cp_width), size_hint=(None,None))
         return cp
         
 
