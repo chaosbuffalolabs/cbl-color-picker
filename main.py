@@ -58,8 +58,6 @@ class ColorWheel(Widget):
         super(ColorWheel,self).__init__(**kwargs)
 
         self.SVs = [(float(x)/self.piece_divisions,1) for x in range(self.piece_divisions)] + [(1, float(y)/self.piece_divisions) for y in reversed(range(self.piece_divisions))]
-        print self.origin
-        # Clock.schedule_once(self.init_wheel, .75)
 
     def on_origin(self,instance,value):
         self.init_wheel(None)
@@ -117,7 +115,7 @@ class ColorWheel(Widget):
             return False
 
         # code is still set up to allow pinch to zoom, but this is disabled for now since it was fiddly with
-        # small wheels. Uncomment these lines and  adjust on_touch_move to reenable this.
+        # small wheels. Comment out these lines and  adjust on_touch_move to reenable this.
         if self._num_touches != 0:
             return False
 
