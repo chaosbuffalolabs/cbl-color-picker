@@ -235,7 +235,7 @@ class ColorArc(InstructionGroup):
 
 class ColorPicker(Widget):
     label_color = ListProperty((1,1,1,1))
-    font_size = NumericProperty(12)
+    font_size = int(min(Window.size)*.03)
     bg_color = ListProperty((.3,.3,.3,1))
     selected_color = ListProperty((1,1,1,1))
     wheel = ObjectProperty(None)
@@ -265,6 +265,7 @@ class ColorPicker(Widget):
 class NumPad(Widget):
     display_text = StringProperty("0")
     display_value = NumericProperty(0)
+    font_size = int(min(Window.size)*.03)
 
     def __init__(self, popup, **kwargs):
         super(NumPad, self).__init__(**kwargs)
